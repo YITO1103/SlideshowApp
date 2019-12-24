@@ -9,7 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var bAutoPlay : Bool  = false
 
+    @IBAction func btnPlay(_ sender: Any) {
+        print("------")
+        print(bAutoPlay)
+        if bAutoPlay {
+            btnPlay.setTitle("再生", for: .normal)
+            bAutoPlay = false
+        }
+        else {
+            btnPlay.setTitle("停止", for: .normal)
+            bAutoPlay = true
+        }
+    }
     @IBOutlet weak var btnPlay: UIButton!
     enum CMD: String {
         case c_next = "次"
