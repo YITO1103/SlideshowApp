@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var btnPlay: UIButton!
     enum CMD: String {
         case c_next = "次"
         case c_prev = "前"
@@ -92,7 +93,7 @@ class ViewController: UIViewController {
                     //print(sPath)
                 }
             }
-
+            btnPlay.setTitle("再生", for: .normal)
             /*
             print("----------------------")
              print( arrPathImageFile)
