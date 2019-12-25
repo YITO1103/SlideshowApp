@@ -48,7 +48,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btnNext" destination="8Xb-O1-AZb" id="Sr0-LF-RNI"/>
                         <outlet property="btnPlay" destination="6jz-nc-SJh" id="6y2-Ld-2Vu"/>
+                        <outlet property="btnPrev" destination="BX3-O0-Lyp" id="ZgU-B8-8HL"/>
                         <outlet property="imageView" destination="DgP-Pe-9tl" id="OFT-wj-Lt3"/>
                     </connections>
                 </viewController>

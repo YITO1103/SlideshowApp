@@ -16,10 +16,26 @@ class ViewController: UIViewController {
         print("------")
         print(bAutoPlay)
         if bAutoPlay {
+/*
+「停止」がタップされた
+→
+ オートプレイを止める
+ スライド切り替えボタンを使用可にする
+ */
             btnPlay.setTitle("再生", for: .normal)
             bAutoPlay = false
+            btnNext.isEnabled = true
+            btnPrev.isEnabled = true
         }
         else {
+/*
+ 「再生」がタップされた
+　→
+    スライド切り替えボタンを使用不可にする
+    オートプレイにする。
+ */
+            btnNext.isEnabled = false
+            btnPrev.isEnabled = false
             btnPlay.setTitle("停止", for: .normal)
             bAutoPlay = true
         }
@@ -67,11 +83,13 @@ class ViewController: UIViewController {
     // 表示中のアイテムNo.
     var iCurrentIndex:Int=0
 
-    // 進むをタップ
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnPrev: UIButton!
+    // 「進む」ボタンをタップ
     @IBAction func btnNext(_ sender: Any) {
         showImage(CMD.c_next)
     }
-    // 戻るをタップ
+    // 「戻る」ボタンをタップ
     @IBAction func btnPrev(_ sender: Any) {
         showImage(CMD.c_prev)
     }
@@ -108,17 +126,7 @@ class ViewController: UIViewController {
                 }
             }
             btnPlay.setTitle("再生", for: .normal)
-            /*
-            print("----------------------")
-             print( arrPathImageFile)
-            print("----------------------")
-            print( arrPathImageFile.count)
-            print("prev iCurrentIndex>>" + iCurrentIndex.description + ":::" + arrPathImageFile[iCurrentIndex])
-            // 画像ファイルを読み込み Image Viewに画像を設定
-            imageView.image = nil
-            imageView.setNeedsDisplay()
-            imageView.image = UIImage(named: arrPathImageFile[iCurrentIndex])
-            */
+
         }
         catch let error {
             print("----------------------")
@@ -127,13 +135,7 @@ class ViewController: UIViewController {
         }
         showImage(CMD.c_init)
 
-        
-        /*
-        let sImgPath = sImgDirPath + "/01.png"       // バンドルした画像ファイルを読み込み
-        let image = UIImage(named: sImgPath)
-        // Image Viewに画像を設定
-        imageView.image = image
-         */
+
         
     }
 }
