@@ -9,6 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    
+    
+    // タイマー
+    // timeInterval: 2sec, repeats: true
+    @objc func updateTimer(_ timer: Timer) {
+
+        if bAutoPlay {
+            print("---updateTimer-------iCurrentIndex:" + iCurrentIndex.description)
+            showImage(CMD.c_next)
+        }
+    }
+    var timer: Timer! //タイマー
+
     
     var bAutoPlay : Bool  = false
 
@@ -16,28 +30,35 @@ class ViewController: UIViewController {
         print("------")
         print(bAutoPlay)
         if bAutoPlay {
-/*
-「停止」がタップされた
-→
- オートプレイを止める
- スライド切り替えボタンを使用可にする
- */
+            /*
+            「停止」がタップされた
+            →
+             オートプレイを止める
+             スライド切り替えボタンを使用可にする
+             */
+            // タイマーを停止する
+            if let workingTimer = timer{
+                workingTimer.invalidate()
+            }
             btnPlay.setTitle("再生", for: .normal)
             bAutoPlay = false
             btnNext.isEnabled = true
             btnPrev.isEnabled = true
         }
         else {
-/*
- 「再生」がタップされた
-　→
-    スライド切り替えボタンを使用不可にする
-    オートプレイにする。
- */
+            /*
+             「再生」がタップされた
+            　→
+                スライド切り替えボタンを使用不可にする
+                オートプレイにする。
+             */
             btnNext.isEnabled = false
             btnPrev.isEnabled = false
             btnPlay.setTitle("停止", for: .normal)
             bAutoPlay = true
+            // タイマー開始
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+
         }
     }
     @IBOutlet weak var btnPlay: UIButton!
@@ -138,5 +159,6 @@ class ViewController: UIViewController {
 
         
     }
+    
 }
 
