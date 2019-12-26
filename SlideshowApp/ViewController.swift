@@ -20,8 +20,11 @@ class ViewController: UIViewController {
 
         print("fullpath：" + urlPath.description)
         print("file：" + urlPath.lastPathComponent)
-    }
-    
+        
+        
+        // セグエを使用して画面を遷移
+        self.performSegue(withIdentifier: "detail", sender: nil)    }
+        //https://qiita.com/misakiagata/items/b7f6c2f6c9f988ec38c7
     // タイマー
     // timeInterval: 2sec, repeats: true
     @objc func updateTimer(_ timer: Timer) {
@@ -169,6 +172,11 @@ class ViewController: UIViewController {
 
         
     }
+        @IBAction func unwind(_ segue: UIStoryboardSegue) {
+            print("unwind()----------------------")
+
+    }
+    
     
 }
 

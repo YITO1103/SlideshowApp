@@ -60,6 +60,7 @@
                         <outlet property="btnPlay" destination="6jz-nc-SJh" id="6y2-Ld-2Vu"/>
                         <outlet property="btnPrev" destination="BX3-O0-Lyp" id="ZgU-B8-8HL"/>
                         <outlet property="imageView" destination="DgP-Pe-9tl" id="OFT-wj-Lt3"/>
+                        <segue destination="FoD-Bf-w7t" kind="show" identifier="detail" id="N6t-Tq-mk0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,7 +77,7 @@
             <objects>
                 <viewController id="FoD-Bf-w7t" customClass="DetailViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WfC-yY-mib">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-1O-5sO">
@@ -90,15 +91,20 @@
                                 <rect key="frame" x="158" y="283" width="98" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="c8v-0d-TBR" kind="unwind" unwindAction="unwind:" id="9zm-Sw-Trr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="m6k-9w-jlT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8CH-Hk-KCl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCq-lG-JPq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="c8v-0d-TBR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="750.72463768115949" y="128.57142857142856"/>
+            <point key="canvasLocation" x="906" y="129"/>
         </scene>
     </scenes>
 </document>
