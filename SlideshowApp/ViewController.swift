@@ -11,6 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBAction func tapAction(_ sender: Any) {
+        
+        print("tapAction------")
+        print("インデックス：" + iCurrentIndex.description)
+        print("表示：" + arrPathImageFile[iCurrentIndex])
+ 
+        
+    }
     
     // タイマー
     // timeInterval: 2sec, repeats: true
@@ -70,13 +78,13 @@ class ViewController: UIViewController {
     func showImage(_ sCmd : CMD) {
         
         switch sCmd {
-        case CMD.c_next:
+        case CMD.c_prev:
             iCurrentIndex -= 1
             if iCurrentIndex < 0  {
                 iCurrentIndex = arrPathImageFile.count - 1
             }
             break
-        case CMD.c_prev:
+        case CMD.c_next:
             iCurrentIndex += 1
             if iCurrentIndex >= arrPathImageFile.count {
                 iCurrentIndex = 0
