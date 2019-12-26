@@ -15,9 +15,11 @@ class ViewController: UIViewController {
         
         print("tapAction------")
         print("インデックス：" + iCurrentIndex.description)
-        print("表示：" + arrPathImageFile[iCurrentIndex])
- 
-        
+
+        let urlPath = URL(fileURLWithPath: arrPathImageFile[iCurrentIndex])
+
+        print("fullpath：" + urlPath.description)
+        print("file：" + urlPath.lastPathComponent)
     }
     
     // タイマー
