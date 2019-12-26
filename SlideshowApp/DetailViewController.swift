@@ -15,8 +15,7 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
+    var sImagePath:String = ""
     /*
     // MARK: - Navigation
 

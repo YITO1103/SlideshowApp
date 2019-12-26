@@ -20,8 +20,7 @@ class ViewController: UIViewController {
 
         print("fullpath：" + urlPath.description)
         print("file：" + urlPath.lastPathComponent)
-        
-        
+
         // セグエを使用して画面を遷移
         self.performSegue(withIdentifier: "detail", sender: nil)    }
         //https://qiita.com/misakiagata/items/b7f6c2f6c9f988ec38c7
@@ -175,8 +174,31 @@ class ViewController: UIViewController {
         @IBAction func unwind(_ segue: UIStoryboardSegue) {
             print("unwind()----------------------")
 
+            if bAutoPlay {
+                // タイマー開始
+                timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+
+            }
+            
+            
     }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のResultViewControllerを取得する
+        let detailViewController:DetailViewController = segue.destination as! DetailViewController
+        
+        
+        let sImagePath = arrPathImageFile[iCurrentIndex]
+
+        detailViewController.sImagePath = sImagePath
+        
+        print("prepare（）ーーーーーーsImagePath：" + detailViewController.sImagePath)
+        if bAutoPlay {
+            // タイマーを停止する
+            if let workingTimer = timer{
+                workingTimer.invalidate()
+            }
+        }
+        
+    }
 }
 
