@@ -171,7 +171,7 @@ class ViewController: UIViewController {
 
         
     }
-        @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
             print("unwind()----------------------")
 
             if bAutoPlay {
@@ -186,18 +186,17 @@ class ViewController: UIViewController {
         // segueから遷移先のResultViewControllerを取得する
         let detailViewController:DetailViewController = segue.destination as! DetailViewController
         
-        
-        let sImagePath = arrPathImageFile[iCurrentIndex]
-
-        detailViewController.sImagePath = sImagePath
-        
-        print("prepare（）ーーーーーーsImagePath：" + detailViewController.sImagePath)
+        //遷移先画面に設定
+        detailViewController.sImagePath = arrPathImageFile[iCurrentIndex]
+        detailViewController.detailImage = imageView.image
         if bAutoPlay {
             // タイマーを停止する
             if let workingTimer = timer{
                 workingTimer.invalidate()
             }
         }
+        // 
+        detailViewController.initUi()
         
     }
 }

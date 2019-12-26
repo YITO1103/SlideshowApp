@@ -10,12 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var detailImageView: UIImageView!
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        detailImageView.image = self.detailImage
+        
     }
-    var sImagePath:String = ""
+    var sImagePath:String? = nil
     /*
     // MARK: - Navigation
 
@@ -25,5 +31,18 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    var  detailImage : UIImage?
+    
+    func initUi() {
 
+        if let sPath = sImagePath {
+            print("initUi()----------------------" + sPath)
+
+            //detailImageView.image = detailImage
+            
+        }
+        else {
+            print("値が代入されていません")
+        }
+    }
 }
