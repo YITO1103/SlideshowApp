@@ -13,15 +13,25 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
 
     @IBOutlet weak var labelFileName: UILabel!
-    
-    
+    override func viewDidLayoutSubviews() {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("W,H)= (" + self.view.frame.width.description + "," + self.view.frame.height.description + ")")
+        //let w = self.view.frame.width
+        //let h = self.view.frame.height-40
+        //let rect:CGRect = CGRect(x:0, y:0, width: w, height:h)
+        //detailImageView.frame = rect
+
+        
         // Do any additional setup after loading the view.
         detailImageView.image = self.detailImage
         labelFileName.text = sImageFileName
-        }
+
+        
+        
+    }
     var sImageFileName:String? = nil
     /*
     // MARK: - Navigation
