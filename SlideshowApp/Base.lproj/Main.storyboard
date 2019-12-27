@@ -15,48 +15,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-Pe-9tl">
-                                <rect key="frame" x="20" y="54" width="374" height="243"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="BiN-w1-Jk3" appends="YES" id="PSG-gJ-1pt"/>
-                                </connections>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-qk-okO">
-                                <rect key="frame" x="20" y="352" width="374" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Z8O-r3-WVf">
+                                <rect key="frame" x="5" y="49" width="404" height="808"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-O1-AZb">
-                                        <rect key="frame" x="56" y="10" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="進む"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-Pe-9tl">
+                                        <rect key="frame" x="5" y="0.0" width="394" height="315"/>
+                                        <gestureRecognizers/>
                                         <connections>
-                                            <action selector="btnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9I-rY-aTY"/>
+                                            <outletCollection property="gestureRecognizers" destination="BiN-w1-Jk3" appends="YES" id="PSG-gJ-1pt"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jz-nc-SJh">
-                                        <rect key="frame" x="150" y="10" width="102" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="---"/>
-                                        <connections>
-                                            <action selector="btnPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76m-oP-rxq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-O0-Lyp">
-                                        <rect key="frame" x="322" y="10" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="戻る"/>
-                                        <connections>
-                                            <action selector="btnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQw-CC-Z12"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="7KZ-dF-HL3">
+                                        <rect key="frame" x="83" y="345" width="238" height="463"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-O1-AZb">
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="463"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="進む"/>
+                                                <connections>
+                                                    <action selector="btnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9I-rY-aTY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jz-nc-SJh">
+                                                <rect key="frame" x="104" y="0.0" width="30" height="463"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="---">
+                                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76m-oP-rxq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-O0-Lyp">
+                                                <rect key="frame" x="195" y="0.0" width="43" height="463"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="戻る"/>
+                                                <connections>
+                                                    <action selector="btnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQw-CC-Z12"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z8O-r3-WVf" secondAttribute="trailing" constant="5" id="2uG-3v-iNN"/>
+                            <constraint firstItem="Z8O-r3-WVf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="BdF-4A-ITb"/>
+                            <constraint firstItem="Z8O-r3-WVf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="ECH-iq-yhc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z8O-r3-WVf" secondAttribute="bottom" constant="5" id="PwO-X4-gxM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="BiN-w1-Jk3" appends="YES" id="una-Jn-wrp"/>
@@ -87,32 +97,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-fW-Ghz">
-                                <rect key="frame" x="158" y="590" width="98" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="c8v-0d-TBR" kind="unwind" unwindAction="unwind:" id="9zm-Sw-Trr"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3po-Yt-gjT">
-                                <rect key="frame" x="20" y="20" width="374" height="227"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-1O-5sO">
-                                <rect key="frame" x="158" y="367" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ipr-Ec-hOU">
+                                <rect key="frame" x="5" y="5" width="404" height="798"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-Wo-Gat">
+                                        <rect key="frame" x="108.5" y="0.0" width="187" height="266"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-8d-KiD">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="+"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxM-gB-0a4">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="-"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ファイル名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-1O-5sO">
+                                                <rect key="frame" x="80" y="0.0" width="107" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3po-Yt-gjT">
+                                        <rect key="frame" x="15" y="266" width="374" height="266"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-fW-Ghz">
+                                        <rect key="frame" x="182.5" y="532" width="39" height="266"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="戻る">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="c8v-0d-TBR" kind="unwind" unwindAction="unwind:" id="9zm-Sw-Trr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="m6k-9w-jlT" firstAttribute="trailing" secondItem="Ipr-Ec-hOU" secondAttribute="trailing" constant="5" id="Dkt-eh-Hj2"/>
+                            <constraint firstItem="Ipr-Ec-hOU" firstAttribute="top" secondItem="m6k-9w-jlT" secondAttribute="top" constant="5" id="DpC-ar-4qW"/>
+                            <constraint firstItem="Ipr-Ec-hOU" firstAttribute="leading" secondItem="m6k-9w-jlT" secondAttribute="leading" constant="5" id="Ik7-Wu-zNy"/>
+                            <constraint firstItem="m6k-9w-jlT" firstAttribute="bottom" secondItem="Ipr-Ec-hOU" secondAttribute="bottom" constant="5" id="PZr-sM-Ygg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m6k-9w-jlT"/>
                     </view>
                     <navigationItem key="navigationItem" id="8CH-Hk-KCl"/>
                     <connections>
                         <outlet property="detailImageView" destination="3po-Yt-gjT" id="q2k-Pd-lF0"/>
+                        <outlet property="labelFileName" destination="Xfx-1O-5sO" id="yqj-zY-2Qf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCq-lG-JPq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

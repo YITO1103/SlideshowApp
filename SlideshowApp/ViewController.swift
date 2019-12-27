@@ -185,9 +185,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のResultViewControllerを取得する
         let detailViewController:DetailViewController = segue.destination as! DetailViewController
+
+        let arr = arrPathImageFile[iCurrentIndex].components(separatedBy: "/")  // ;で分割する
         
-        //遷移先画面に設定
-        detailViewController.sImagePath = arrPathImageFile[iCurrentIndex]
+        detailViewController.sImageFileName = arr[arr.count-1]
         detailViewController.detailImage = imageView.image
         if bAutoPlay {
             // タイマーを停止する

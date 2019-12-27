@@ -12,16 +12,17 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailImageView: UIImageView!
 
-
+    @IBOutlet weak var labelFileName: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         detailImageView.image = self.detailImage
-        
-    }
-    var sImagePath:String? = nil
+        labelFileName.text = sImageFileName
+        }
+    var sImageFileName:String? = nil
     /*
     // MARK: - Navigation
 
@@ -35,11 +36,11 @@ class DetailViewController: UIViewController {
     
     func initUi() {
 
-        if let sPath = sImagePath {
+        if let sPath = sImageFileName {
             print("initUi()----------------------" + sPath)
 
             //detailImageView.image = detailImage
-            
+           
         }
         else {
             print("値が代入されていません")
