@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
 
         
         // Do any additional setup after loading the view.
-        detailImageView.image = self.detailImage
+        //detailImageView.image = self.detailImage
         labelFileName.text = sImageFileName
 
         

@@ -97,60 +97,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" tag="5" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ipr-Ec-hOU">
-                                <rect key="frame" x="5" y="49" width="404" height="807"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-Wo-Gat">
+                                <rect key="frame" x="0.0" y="44" width="173" height="38"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-Wo-Gat">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="38"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-8d-KiD">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <state key="normal" title="+"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxM-gB-0a4">
-                                                <rect key="frame" x="33" y="0.0" width="261" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <state key="normal" title="-"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ファイル名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-1O-5sO">
-                                                <rect key="frame" x="297" y="12.5" width="107" height="25.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3po-Yt-gjT">
-                                        <rect key="frame" x="0.0" y="44" width="404" height="722"/>
-                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-fW-Ghz">
-                                        <rect key="frame" x="0.0" y="772" width="404" height="35"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <state key="normal" title="戻る">
-                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="c8v-0d-TBR" kind="unwind" unwindAction="unwind:" id="9zm-Sw-Trr"/>
-                                        </connections>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-8d-KiD">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="+"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxM-gB-0a4">
+                                        <rect key="frame" x="33" y="0.0" width="30" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="-"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ファイル名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-1O-5sO">
+                                        <rect key="frame" x="66" y="12.5" width="107" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="3po-Yt-gjT" firstAttribute="leading" secondItem="Ipr-Ec-hOU" secondAttribute="leadingMargin" id="1P1-vr-r3p"/>
-                                    <constraint firstItem="3po-Yt-gjT" firstAttribute="trailing" secondItem="Ipr-Ec-hOU" secondAttribute="trailingMargin" id="ldr-e1-6t0"/>
-                                </constraints>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-fW-Ghz">
+                                <rect key="frame" x="0.0" y="827" width="414" height="35"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c8v-0d-TBR" kind="unwind" unwindAction="unwind:" id="9zm-Sw-Trr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3po-Yt-gjT">
+                                <rect key="frame" x="0.0" y="82" width="414" height="740"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.050000000000000003"/>
                         <constraints>
-                            <constraint firstItem="Ipr-Ec-hOU" firstAttribute="top" secondItem="m6k-9w-jlT" secondAttribute="top" constant="5" id="7K8-AQ-YSe"/>
-                            <constraint firstItem="m6k-9w-jlT" firstAttribute="trailing" secondItem="Ipr-Ec-hOU" secondAttribute="trailing" constant="5" id="Dkt-eh-Hj2"/>
-                            <constraint firstItem="Ipr-Ec-hOU" firstAttribute="leading" secondItem="m6k-9w-jlT" secondAttribute="leading" constant="5" id="Ik7-Wu-zNy"/>
-                            <constraint firstItem="m6k-9w-jlT" firstAttribute="bottom" secondItem="Ipr-Ec-hOU" secondAttribute="bottom" constant="6" id="PAn-Y2-YJ1"/>
+                            <constraint firstItem="3po-Yt-gjT" firstAttribute="top" secondItem="AhS-Wo-Gat" secondAttribute="bottom" id="2VN-cZ-OGY"/>
+                            <constraint firstItem="3po-Yt-gjT" firstAttribute="leading" secondItem="m6k-9w-jlT" secondAttribute="leading" id="4O3-4J-jLx"/>
+                            <constraint firstItem="VtX-fW-Ghz" firstAttribute="top" secondItem="3po-Yt-gjT" secondAttribute="bottom" constant="5" id="Aq8-10-4rw"/>
+                            <constraint firstItem="m6k-9w-jlT" firstAttribute="trailing" secondItem="VtX-fW-Ghz" secondAttribute="trailing" id="Ndj-bf-ejb"/>
+                            <constraint firstItem="AhS-Wo-Gat" firstAttribute="leading" secondItem="3po-Yt-gjT" secondAttribute="leading" id="Pqp-mG-pRs"/>
+                            <constraint firstItem="3po-Yt-gjT" firstAttribute="top" secondItem="AhS-Wo-Gat" secondAttribute="bottom" id="Ue9-3P-LHm"/>
+                            <constraint firstItem="AhS-Wo-Gat" firstAttribute="top" secondItem="m6k-9w-jlT" secondAttribute="top" id="Zl2-rg-Lf2"/>
+                            <constraint firstItem="VtX-fW-Ghz" firstAttribute="top" secondItem="3po-Yt-gjT" secondAttribute="bottom" constant="5" id="fHm-7F-hsG"/>
+                            <constraint firstItem="VtX-fW-Ghz" firstAttribute="leading" secondItem="m6k-9w-jlT" secondAttribute="leading" id="fZZ-xG-lDj"/>
+                            <constraint firstItem="m6k-9w-jlT" firstAttribute="bottom" secondItem="VtX-fW-Ghz" secondAttribute="bottom" id="iph-AT-Z20"/>
+                            <constraint firstItem="m6k-9w-jlT" firstAttribute="trailing" secondItem="3po-Yt-gjT" secondAttribute="trailing" id="pRf-Na-4lw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m6k-9w-jlT"/>
                     </view>
