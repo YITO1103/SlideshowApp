@@ -13,26 +13,60 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
 
     @IBOutlet weak var labelFileName: UILabel!
+    
+    
+    
+    func resize(image: UIImage, dh: Double) -> UIImage {
+            
+        // オリジナル画像のサイズからアスペクト比を計算
+        let aspectScale = image.size.width / image.size.height
+        
+        // widthからアスペクト比を元にリサイズ後のサイズを取得
+        let resizedSize = CGSize(width: dh, height: dh * Double(aspectScale))
+        
+        // リサイズ後のUIImageを生成して返却
+        UIGraphicsBeginImageContext(resizedSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizedImage!
+    }
     override func viewDidLayoutSubviews() {
     }
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("W,H)= (" + self.view.frame.width.description + "," + self.view.frame.height.description + ")")
-        //let w = self.view.frame.width
-        //let h = self.view.frame.height-40
+        
+        //var detailImageSize = detailImage?.size
+        //let w = detailImage?.size.widt
+        //let h : Double = Double( detailImage detailImageView!.size.width)
+        //let h : Double =  detailImage?.size.height
         //let rect:CGRect = CGRect(x:0, y:0, width: w, height:h)
         //detailImageView.frame = rect
+        //print("W,H)= (" +  + ","   + h + ")")
 
-        
-        // Do any additional setup after loading the view.
+        let h = Double( scrollView.frame.height)
+
+            
+        //}
+        /*
+        let rect:CGRect = CGRect(x:0, y:0, width:199, height:1000)
+        detailImageView.frame = rect
         //detailImageView.image = self.detailImage
-        labelFileName.text = sImageFileName
 
         
-        
+                       let reSize = CGSize(width: 500, height: 1000)
+                */
+                // UIImage インスタンスの生成
+        let arr = sImagePath.components(separatedBy: "/")  // ;で分割する
+        labelFileName.text = arr[arr.count-1]
+        let img = UIImage(named:sImagePath)!
+        //detailImageView.image = resize(image: img, dh: h)
+        detailImageView.image = resize(image: img, dh: h)
     }
-    var sImageFileName:String? = nil
+    var sImagePath:String = ""
     /*
     // MARK: - Navigation
 
@@ -45,15 +79,6 @@ class DetailViewController: UIViewController {
     var  detailImage : UIImage?
     
     func initUi() {
-
-        if let sPath = sImageFileName {
-            print("initUi()----------------------" + sPath)
-
-            //detailImageView.image = detailImage
-           
-        }
-        else {
-            print("値が代入されていません")
-        }
+        print("initUi()----------------------")
     }
 }

@@ -186,9 +186,7 @@ class ViewController: UIViewController {
         // segueから遷移先のResultViewControllerを取得する
         let detailViewController:DetailViewController = segue.destination as! DetailViewController
 
-        let arr = arrPathImageFile[iCurrentIndex].components(separatedBy: "/")  // ;で分割する
-        
-        detailViewController.sImageFileName = arr[arr.count-1]
+        detailViewController.sImagePath = arrPathImageFile[iCurrentIndex]
         detailViewController.detailImage = imageView.image
         if bAutoPlay {
             // タイマーを停止する
