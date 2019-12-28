@@ -25,8 +25,7 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "detail", sender: nil)    }
         //https://qiita.com/misakiagata/items/b7f6c2f6c9f988ec38c7
     // タイマー
-    // timeInterval: 2sec, repeats: true
-    @objc func updateTimer(_ timer: Timer) {
+   @objc func updateTimer(_ timer: Timer) {
 
         if bAutoPlay {
             print("---updateTimer-------iCurrentIndex:" + iCurrentIndex.description)
@@ -35,7 +34,6 @@ class ViewController: UIViewController {
     }
     var timer: Timer! //タイマー
 
-    
     var bAutoPlay : Bool  = false
 
     @IBAction func btnPlay(_ sender: Any) {
@@ -74,6 +72,7 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var btnPlay: UIButton!
+    // enumをつかってみる
     enum CMD: String {
         case c_next = "次"
         case c_prev = "前"
@@ -98,12 +97,12 @@ class ViewController: UIViewController {
             iCurrentIndex = 0
             break
         }
-        print("prev iCurrentIndex>>" + iCurrentIndex.description + ":::" + arrPathImageFile[iCurrentIndex])
-        print("----------------------")
-        print( arrPathImageFile)
-        print("----------------------")
-        print( arrPathImageFile.count)
-        print("prev iCurrentIndex>>" + iCurrentIndex.description + ":::" + arrPathImageFile[iCurrentIndex])
+        //print("prev iCurrentIndex>>" + iCurrentIndex.description + ":::" + //arrPathImageFile[iCurrentIndex])
+        //print("----------------------")
+        //print( arrPathImageFile)
+        //print("----------------------")
+        //print( arrPathImageFile.count)
+        //print("prev iCurrentIndex>>" + iCurrentIndex.description + ":::" + //arrPathImageFile[iCurrentIndex])
         // 画像ファイルを読み込み Image Viewに画像を設定
          
         imageView.image = nil
@@ -132,8 +131,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
         //for deb
         print(NSHomeDirectory())
         
@@ -141,7 +138,6 @@ class ViewController: UIViewController {
         let fileManager = FileManager()
          
         // ファイル一覧の場所であるpathを文字列で取得
-        //let path = Bundle.main.bundlePath
         sImgDirPath = Bundle.main.bundlePath + "/images"
 
         do {
@@ -149,46 +145,32 @@ class ViewController: UIViewController {
          
             // png画像だけを集める配列を用意
             // todo: 画像形式。画像数
-            
             for file in files {
                 // ファイル名の後方が.pngであればtrueとなる
                 if file.hasSuffix(".png") {
                     let sPath = sImgDirPath + "/" + file
                     arrPathImageFile.append(sPath)
-                    //print(sPath)
                 }
             }
             btnPlay.setTitle("再生", for: .normal)
-
         }
         catch let error {
-            print("----------------------")
-
             print( error)
         }
         // 枠
         self.imageView.layer.borderColor = UIColor.blue.cgColor
         self.imageView.layer.borderWidth = 1
-
-
         showImage(CMD.c_init)
-
-
-        
     }
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
-            print("unwind()----------------------")
+        if bAutoPlay {
+            // タイマー開始
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
 
-            if bAutoPlay {
-                // タイマー開始
-                timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
-
-            }
-            
-            
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // segueから遷移先のResultViewControllerを取得する
+        // segueから遷移先のviewControllerを取得する
         let detailViewController:DetailViewController = segue.destination as! DetailViewController
 
         detailViewController.sImagePath = arrPathImageFile[iCurrentIndex]
@@ -199,9 +181,8 @@ class ViewController: UIViewController {
                 workingTimer.invalidate()
             }
         }
-        // 
+        // detailImageViewのメソッドをよんでみる
         detailViewController.initUi()
-        
     }
 }
 
