@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
         // オリジナル画像のサイズからアスペクト比を計算
         let aspectScale = image.size.width / image.size.height
         // widthからアスペクト比を元にリサイズ後のサイズを取得
-        let resizedSize = CGSize(width: dh, height: dh * Double(aspectScale))
+        let resizedSize = CGSize(width: dh * Double(aspectScale), height: dh )
         // リサイズ後のUIImageを生成して返却
         UIGraphicsBeginImageContext(resizedSize)
         image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
@@ -39,10 +39,21 @@ class DetailViewController: UIViewController {
         let arr = sImagePath.components(separatedBy: "/")  // ;で分割する
         labelFileName.text = arr[arr.count-1]
         let img = UIImage(named:sImagePath)!
+
+
+        let w = detailImageView.frame.width
+        var h = detailImageView.frame.height
+        
+        if w > h {
+            h = w
+        }
+
         // 枠
         detailImageView.layer.borderColor = UIColor.blue.cgColor
         detailImageView.layer.borderWidth = 1
-        detailImageView.image = img
+
+        //
+        detailImageView.image = resize(image: img, dh: Double(h) )
     }
     var sImagePath:String = ""
 
