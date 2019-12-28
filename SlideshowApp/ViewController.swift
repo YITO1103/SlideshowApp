@@ -184,5 +184,8 @@ class ViewController: UIViewController {
         // detailImageViewのメソッドをよんでみる
         detailViewController.initUi()
     }
+
+
+    
 }
 
