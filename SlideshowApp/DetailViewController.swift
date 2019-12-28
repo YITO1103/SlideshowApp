@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
         //detailImageView.frame = rect
         //print("W,H)= (" +  + ","   + h + ")")
 
-        let h = Double( scrollView.frame.height)
+        //let h = Double( scrollView.frame.height)
 
             
         //}
@@ -64,7 +64,9 @@ class DetailViewController: UIViewController {
         labelFileName.text = arr[arr.count-1]
         let img = UIImage(named:sImagePath)!
         //detailImageView.image = resize(image: img, dh: h)
-        detailImageView.image = resize(image: img, dh: h)
+
+        //detailImageView.image = resize(image: img, dh: h)
+        detailImageView.image = img
     }
     var sImagePath:String = ""
     /*
