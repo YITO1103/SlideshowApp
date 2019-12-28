@@ -66,6 +66,10 @@ class DetailViewController: UIViewController {
         //detailImageView.image = resize(image: img, dh: h)
 
         //detailImageView.image = resize(image: img, dh: h)
+        
+        // 枠
+        detailImageView.layer.borderColor = UIColor.blue.cgColor
+        detailImageView.layer.borderWidth = 1
         detailImageView.image = img
     }
     var sImagePath:String = ""

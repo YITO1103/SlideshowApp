@@ -166,6 +166,11 @@ class ViewController: UIViewController {
 
             print( error)
         }
+        // 枠
+        self.imageView.layer.borderColor = UIColor.blue.cgColor
+        self.imageView.layer.borderWidth = 1
+
+
         showImage(CMD.c_init)
 
 
