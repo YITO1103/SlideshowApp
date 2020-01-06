@@ -52,8 +52,8 @@ class ViewController: UIViewController {
             }
             btnPlay.setTitle("再生", for: .normal)
             bAutoPlay = false
-            btnNext.isEnabled = true
-            btnPrev.isEnabled = true
+            btn_prev.isEnabled = true
+            btn_next.isEnabled = true
         }
         else {
             /*
@@ -62,8 +62,8 @@ class ViewController: UIViewController {
                 スライド切り替えボタンを使用不可にする
                 オートプレイにする。
              */
-            btnNext.isEnabled = false
-            btnPrev.isEnabled = false
+            btn_prev.isEnabled = false
+            btn_next.isEnabled = false
             btnPlay.setTitle("停止", for: .normal)
             bAutoPlay = true
             // タイマー開始
@@ -115,15 +115,15 @@ class ViewController: UIViewController {
     // 表示中のアイテムNo.
     var iCurrentIndex:Int=0
 
-    @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var btnPrev: UIButton!
-    // 「進む」ボタンをタップ
-    @IBAction func btnNext(_ sender: Any) {
-        showImage(CMD.c_next)
-    }
-    // 「戻る」ボタンをタップ
-    @IBAction func btnPrev(_ sender: Any) {
+    @IBOutlet weak var btn_prev: UIButton!
+    @IBOutlet weak var btn_next: UIButton!
+    // 「前」ボタンをタップ
+    @IBAction func btn_prev(_ sender: Any) {
         showImage(CMD.c_prev)
+    }
+    // 「tugi」ボタンをタップ
+    @IBAction func btn_next(_ sender: Any) {
+        showImage(CMD.c_next)
     }
     
     @IBOutlet weak var imageView: UIImageView!
@@ -157,6 +157,8 @@ class ViewController: UIViewController {
         catch let error {
             print( error)
         }
+        
+        arrPathImageFile = arrPathImageFile.sorted { $0 < $1 }
         // 枠
         self.imageView.layer.borderColor = UIColor.blue.cgColor
         self.imageView.layer.borderWidth = 1
